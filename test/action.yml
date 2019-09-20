@@ -5,7 +5,7 @@ inputs:
   working_directory:
     description: 'directory containing Sentinel policies'
     required: true
-    default: '.'
+    default: './sentinel-policy-sets/gcp'
 runs:
   using: 'docker'
   image: 'Dockerfile'
