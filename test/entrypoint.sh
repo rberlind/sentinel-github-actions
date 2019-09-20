@@ -1,5 +1,6 @@
 #!/bin/sh
-
+echo "pwd: $(pwd)"
+echo "ls: $(ls)"
 echo "Working Directory: $1"
 
 set -e
