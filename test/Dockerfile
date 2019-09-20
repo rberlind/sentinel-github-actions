@@ -13,3 +13,4 @@ RUN apk --no-cache add jq curl
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
+CMD ["."]
