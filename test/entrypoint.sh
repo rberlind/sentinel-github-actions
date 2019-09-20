@@ -1,10 +1,12 @@
-#!/bin/sh
+#!/bin/sh -l
+
+echo "Working Directory: $1"
+
 set -e
-cd "${STL_ACTION_WORKING_DIR:-.}"
-echo "Working Directory: $STL_ACTION_WORKING_DIR"
+cd "$1"
 
 set +e
-OUTPUT=$(sh -c "sentinel test $*" 2>&1)
+OUTPUT=$(sh -c "sentinel test -verbose" 2>&1)
 SUCCESS=$?
 echo "$OUTPUT"
 set -e
