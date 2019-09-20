@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
 cd "${STL_ACTION_WORKING_DIR:-.}"
+echo "Working Directory: $STL_ACTION_WORKING_DIR"
 
 set +e
 OUTPUT=$(sh -c "sentinel test $*" 2>&1)
@@ -26,4 +27,3 @@ COMMENTS_URL=$(cat /github/workflow/event.json | jq -r .pull_request.comments_ur
 curl -s -S -H "Authorization: token $GITHUB_TOKEN" --header "Content-Type: application/json" --data "$PAYLOAD" "$COMMENTS_URL" > /dev/null
 
 exit $SUCCESS
-
