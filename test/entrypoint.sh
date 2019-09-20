@@ -4,7 +4,7 @@ echo "ls: $(ls)"
 echo "Working Directory: $1"
 
 set -e
-cd "$1"
+cd "sentinel-policy-sets/gcp"
 
 set +e
 OUTPUT=$(sh -c "sentinel test -verbose" 2>&1)
