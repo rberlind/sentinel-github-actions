@@ -1,10 +1,13 @@
 #!/bin/sh
 echo "pwd: $(pwd)"
 echo "ls: $(ls)"
+echo "env: $(env)"
+echo "args: $@"
 echo "Working Directory: $1"
 
 set -e
-cd "sentinel-policy-sets/gcp"
+#cd "sentinel-policy-sets/gcp"
+cd "$1"
 
 set +e
 OUTPUT=$(sh -c "sentinel test -verbose" 2>&1)
